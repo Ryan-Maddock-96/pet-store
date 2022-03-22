@@ -8,15 +8,14 @@ function openSlideout() {
     openCart.classList.add('nav__cart--loading');
 
     setTimeout(() => {
-        openCart.classList.remove('nav__cart--loading');
         modalBg.style.display = 'block';
-        cart.classList.add('cart__open');
+        openMenu();
+        openCart.classList.remove('nav__cart--loading');
     }, 1000);
 };
 
 function closeSlideout () {
-    cart.classList.remove('cart__open');
-    cart.classList.add('cart__closing');
+    closeMenu();
     modalBg.style.display = 'none';
     
     setTimeout(() => {
@@ -24,6 +23,23 @@ function closeSlideout () {
         document.body.classList.remove('no-overflow');
     }, 1100);
 
+}
+
+function openMenu() {
+
+    console.log(document.body.clientWidth);
+
+    if(document.body.clientWidth <= 1000) {
+        cart.style.width = '90vw';
+    } else {
+        cart.style.width = '525px';
+    }
+    
+    cart.style.display = 'flex';
+}
+
+function closeMenu() {
+    cart.style.width = '0px';
 }
 
 openCart.addEventListener('click', openSlideout);

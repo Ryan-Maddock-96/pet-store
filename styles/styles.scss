@@ -240,7 +240,7 @@ body {
 .cart {
     display: none;
     position: absolute;
-    right: -#{$slideoutWidth};
+    right: 0;
     height: 100vh;
     width: $slideoutWidth;
     background: $white;
@@ -248,7 +248,10 @@ body {
     box-sizing: border-box;
     flex-direction: column;
     border-left: 1px solid $grey;
-
+    width: 0;
+    overflow: hidden;
+    transition: all 2s ease;
+    
     &__background {
         display: none;
         position: fixed;
@@ -258,20 +261,13 @@ body {
         z-index: 99;
     }
 
-    &__open {
-        display: flex;
-        animation: slideOut 1s forwards;
-    }
-
-    &__closing {
-        display: flex;
-        animation: slideBack 1s forwards;
-    }
-
     &__header {
         display: flex;
         align-items: center;
         padding: 25px 50px;
+        flex-shrink: 0;
+        min-width: 525px;
+        box-sizing: border-box;
 
         &__title {
             flex-grow: 1;
@@ -295,6 +291,8 @@ body {
         border-style: solid;
         border-color: $grey;
         overflow-y: auto;
+        min-width: 525px;
+        box-sizing: border-box;
     }
 
     &__item {
@@ -303,6 +301,8 @@ body {
         gap: 20px;
         border-bottom: 1px solid $grey;
         padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
 
         &__image {
             height: 150px;
@@ -331,7 +331,8 @@ body {
         gap: 25px;
         padding: 25px 50px 35px;
         text-align: center;
-        flex-shrink: 0;
+        box-sizing: border-box;
+        min-width: 525px;
 
         &__price {
             font-size: 16px;
@@ -345,24 +346,6 @@ body {
     100% { 
         transform:rotate(360deg); 
     } 
-}
-
-@keyframes slideOut {
-    0% {
-        right: -#{$slideoutWidth};
-    }
-    100% {
-        right: 0;
-    }
-}
-
-@keyframes slideBack {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: -#{$slideoutWidth}; 
-    }
 }
 /*#endregion*/
 
@@ -379,6 +362,7 @@ body {
     .header {
         flex-direction: column;
         gap: 0px;
+        padding: 0 50px;
 
         &__text__container, 
         &__card__container {
@@ -390,11 +374,18 @@ body {
         &__text,
         &__card__container {
             height: auto;
-            padding: 75px 0;
+            padding: 75px 50px;
         }
     }
     /*endregion*/
 
     /*region Components*/
+    .cart {
+        &__header,
+        &__content,
+        &__footer {
+            min-width: 90vw;
+        }
+    }
     /*endregion*/
 }
