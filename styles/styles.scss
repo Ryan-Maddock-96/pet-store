@@ -28,13 +28,14 @@ body {
 
     &.no-overflow {
         overflow: hidden;
+        max-height: 100vh;
     }
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 /*#endregion*/
@@ -243,8 +244,7 @@ body {
     display: none;
     position: absolute;
     right: 0;
-    top: 0; 
-    bottom: 0;
+height: 100%;
     width: $slideoutWidth;
     background: $white;
     z-index: 100;
