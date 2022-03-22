@@ -9,34 +9,27 @@ function openSlideout() {
     cart.style.display = 'flex';
 
     setTimeout(() => {
+        if (document.body.clientWidth <= 1000) {
+            cart.style.width = '90vw';
+        } else {
+            cart.style.width = '525px';
+        }
+        
         modalBg.style.display = 'block';
-        openMenu();
-        openCart.classList.remove('nav__cart--loading');
     }, 1000);
 };
 
 function closeSlideout () {
-    closeMenu();
+    cart.style.width = '0px';
     modalBg.style.display = 'none';
+    openCart.classList.remove('nav__cart--loading');
     
     setTimeout(() => {
         cart.classList.remove('cart__closing');
         document.body.classList.remove('no-overflow');
+        
     }, 1100);
 
-}
-
-function openMenu() {
-
-    if(document.body.clientWidth <= 1000) {
-        cart.style.width = '90vw';
-    } else {
-        cart.style.width = '525px';
-    }
-}
-
-function closeMenu() {
-    cart.style.width = '0px';
 }
 
 openCart.addEventListener('click', openSlideout);
