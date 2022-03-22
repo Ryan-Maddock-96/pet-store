@@ -362,11 +362,9 @@ body {
     .header {
         flex-direction: column;
         gap: 0px;
-        padding: 0 50px;
 
         &__text__container, 
         &__card__container {
-            
             width: 100%;
             padding: 0;
         }
@@ -375,6 +373,12 @@ body {
         &__card__container {
             height: auto;
             padding: 75px 50px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        &__text__message {
+            width: 100%;
         }
     }
     /*endregion*/
