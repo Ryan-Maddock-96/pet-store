@@ -243,8 +243,7 @@ body {
     display: none;
     position: absolute;
     right: 0;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    height: calc(100vh - calc(100vh - 100%));
     width: $slideoutWidth;
     background: $white;
     z-index: 100;
@@ -259,7 +258,7 @@ body {
         display: none;
         position: fixed;
         min-height: 100vh;
-        min-height: -webkit-fill-available;
+        height: calc(100vh - calc(100vh - 100%));
         width: 100%;
         background: rgba(0, 0, 0, 40%);
         z-index: 99;
