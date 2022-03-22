@@ -6,6 +6,7 @@ const openCart = document.querySelector('.nav__cart'),
 function openSlideout() {
     document.body.classList.add('no-overflow');
     openCart.classList.add('nav__cart--loading');
+    cart.style.display = 'flex';
 
     setTimeout(() => {
         modalBg.style.display = 'block';
@@ -27,15 +28,11 @@ function closeSlideout () {
 
 function openMenu() {
 
-    console.log(document.body.clientWidth);
-
     if(document.body.clientWidth <= 1000) {
         cart.style.width = '90vw';
     } else {
         cart.style.width = '525px';
     }
-    
-    cart.style.display = 'flex';
 }
 
 function closeMenu() {
