@@ -27,7 +27,6 @@ body {
     font-family: 'Roboto', sans-serif;
 
     &.no-overflow {
-        height: 100vh;
         overflow: hidden;
     }
 }
@@ -245,6 +244,7 @@ body {
     position: absolute;
     right: 0;
     height: 100vh;
+    height: -webkit-fill-available;
     width: $slideoutWidth;
     background: $white;
     z-index: 100;
@@ -259,6 +259,7 @@ body {
         display: none;
         position: fixed;
         height: 100vh;
+        height: -webkit-fill-available;
         width: 100%;
         background: rgba(0, 0, 0, 40%);
         z-index: 99;
