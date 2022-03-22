@@ -39,9 +39,9 @@ closeCart.forEach(el => el.addEventListener('click', closeSlideout));
 
 // Fix for height of navigation on Iphone
 const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty(' —app-height', `${window.innerHeight}px`)
+    const doc = document.documentElement;
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
    }
 
-window.addEventListener('resize', appHeight)
+window.addEventListener('resize', appHeight);
 appHeight();

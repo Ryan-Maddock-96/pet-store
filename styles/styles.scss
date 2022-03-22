@@ -13,7 +13,7 @@ $slideoutWidth: 450px;
 /*#region Layout*/
 
 :root {
-    —app-height: 100%;
+    --app-height: 100%;
 }
 
 html,
@@ -21,7 +21,7 @@ body {
     padding: 0;
     margin: 0;
     min-height: 100vh;
-    min-height: var( —app-height);
+    min-height: var(--app-height);
 
 }
 
@@ -36,7 +36,7 @@ body {
     &.no-overflow {
         overflow: hidden;
         max-height: 100vh;
-        max-height: var( —app-height);
+        max-height: var(--app-height);
     }
 }
 
@@ -253,7 +253,7 @@ body {
     position: absolute;
     right: 0;
     height: 100vh;
-    height: var(—app-height);
+    height: var(--app-height);
     width: $slideoutWidth;
     background: $white;
     z-index: 100;
@@ -267,8 +267,8 @@ body {
     &__background {
         display: none;
         position: fixed;
-        top: 0; 
-        bottom: 0;
+        height: 100vh;
+        height: var(--app-height);
         width: 100%;
         background: rgba(0, 0, 0, 40%);
         z-index: 99;
