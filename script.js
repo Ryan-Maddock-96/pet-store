@@ -1,5 +1,3 @@
-console.log('dddd');
-
 const openCart = document.querySelector('.nav__cart'),
     cart = document.querySelector('.cart'),
     closeCart = document.querySelectorAll('.cart__close__btn'), 
